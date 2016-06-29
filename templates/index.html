@@ -35,7 +35,7 @@
 				return false
 
 			})
-			$(document).on('click', "a", function(){
+			$(document).on('click', "a.delete", function(){
 				console.log('a tag clicked')
 				$.get($(this).attr('href'), function(res){
 					console.log('deleting')
@@ -43,6 +43,14 @@
 						// console.log('update', res)
 		            $('#container').html(res);
 					});
+				})
+				return false
+			})
+			$(document).on('click', "a.page", function(){
+				console.log('a tag clicked')
+				$.get($(this).attr('href'), function(res){
+						// console.log('update', res)
+		            $('#container').html(res);
 				})
 				return false
 			})

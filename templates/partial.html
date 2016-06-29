@@ -1,12 +1,18 @@
+{% if pages %}
+	{% for page in pages %}
+		<a class="page" href="/page/{{page}}">{{page}}</a>
+	{% endfor %}
+{% endif %}
+
 {% if notes %}
   {% for note in notes %}
-  <a href="delete/{{note['id']}}">delete</a>
 	  <h2>
 		 {{ note['title'] }}
 	  </h2>
 		<form class="desc_update_form" action="/desc/{{note['id']}}" method="post">
 			<textarea id="description" name="description" rows="8" cols="40">{{note['description']}}
 			</textarea>
+			<a class="delete" href="delete/{{note['id']}}">delete</a>
 		</form>
 
   {% endfor %}
